@@ -9,19 +9,25 @@ $(document).ready(function() {
   let title;
   for (let index = 0; index < topicArr.length; index++) {
     title = topicArr[index];
-    $("#buttons").append("<button>" + title + "</button>");
+    //creates buttons from items in the array
+    $("#buttons").append(
+      "<button data-search=" + title + ">" + title + "</button>"
+    );
+    console.log($("button"));
   }
-  //link to giphy and write query(limit 10)
-  const queryURL =
-    "http://api.giphy.com/v1/gifs/search?q=" +
-    title +
-    "&api_key=4xTnjBJYg6aueD0kdEHtsoUcQ450SVGu&limit=10";
+  //on click function
 
-  //ajax
-  $.ajax({ url: queryURL, method: "GET" }).done(function(gifs) {
-    console.log(gifs);
+  $("#buttons").on("click", function() {
+    //link to giphy and write query(limit 10)
+    const queryURL =
+      "http://api.giphy.com/v1/gifs/search?q=" +
+      title +
+      "&api_key=4xTnjBJYg6aueD0kdEHtsoUcQ450SVGu&limit=10";
+    console.log(title);
+    //ajax to get gifs from giphy
+    $.ajax({ url: queryURL, method: "GET" }).done(function(gifs) {
+      console.log(gifs);
+    });
   });
-  //make buttons from the array
-
   //
 });
