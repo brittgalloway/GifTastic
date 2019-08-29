@@ -1,14 +1,15 @@
 $(document).ready(function() {
   //array of movie names
   const topicArr = [
-    "spirted away",
-    "princess mononoke",
+    "Spirted Away",
+    "Princess Mononoke",
     "Nauscaa",
-    "the cat returns"
+    "the Cat Returns"
   ];
-  const title;
+  let title;
   for (let index = 0; index < topicArr.length; index++) {
-     title = topicArr[index];
+    title = topicArr[index];
+    $("#buttons").append("<button>" + title + "</button>");
   }
   //link to giphy and write query(limit 10)
   const queryURL =
@@ -16,8 +17,10 @@ $(document).ready(function() {
     title +
     "&api_key=4xTnjBJYg6aueD0kdEHtsoUcQ450SVGu&limit=10";
 
-    //ajax
-    
+  //ajax
+  $.ajax({ url: queryURL, method: "GET" }).done(function(gifs) {
+    console.log(gifs);
+  });
   //make buttons from the array
 
   //
