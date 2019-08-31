@@ -41,3 +41,47 @@ a:visited {
 a :hover {
   color: #ffce6e;
 }
+h1 {
+  font-family: "Georgia", Times, Times New Roman, serif;
+}
+body {
+  background: #dddddd;
+  background: url(../images/fishnets-and-hearts.png);
+  margin: 0px;
+}
+span {
+  background: #fff;
+  color: #4aaaa5;
+  font-size: 18pt;
+}
+main {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  color: #777777;
+  width: 960px;
+  height: 700px;
+  background: #ffffff;
+  padding: 10px 50px 50px 50px;
+  border-bottom: solid;
+  border-color: #4aaaa5;
+  border-radius: 30px;
+  margin: 50px 200px 100px 200px;
+}
+
+button {
+  border-radius: 12px;
+  padding: 10px 22px;
+  background-color: white;
+  color: #4aaaa5;
+  font-size: 14pt;
+  margin: 0px 5px;
+}
+button:hover {
+  color: #ffce6e;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  float: left;
+  padding: 20px 0px 0px 0px;
+}
