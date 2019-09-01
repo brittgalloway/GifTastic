@@ -43,6 +43,8 @@ a :hover {
 }
 h1 {
   font-family: "Georgia", Times, Times New Roman, serif;
+  font-size: 36pt;
+  padding: 20px;
 }
 body {
   background: #dddddd;
@@ -70,7 +72,6 @@ p {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   color: #777777;
   font-size: 14pt;
-  padding-left: 20px;
 }
 
 button {
@@ -89,6 +90,7 @@ button:hover {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
   grid-auto-rows: minmax(100px, auto);
+  padding-top: 20px;
 }
 
 .rows {
@@ -97,5 +99,5 @@ button:hover {
 }
 img {
   width: 273px;
-  padding: 0px 20px 20px 20px;
+  padding: 20px 20px 20px 3px;
 }
