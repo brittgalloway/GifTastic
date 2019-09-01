@@ -58,7 +58,7 @@ main {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   color: #4aaaa5;
   width: 960px;
-  height: 700px;
+
   background: #ffffff;
   padding: 10px 50px 50px 50px;
   border-bottom: solid;
@@ -96,6 +96,6 @@ button:hover {
   grid-row: 4;
 }
 img {
-  width: 250px;
+  width: 273px;
   padding: 0px 20px 20px 20px;
 }
