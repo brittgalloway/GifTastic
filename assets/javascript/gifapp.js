@@ -8,6 +8,7 @@ $(document).ready(function() {
   ];
 
   let title = "";
+  //for loop for movie titles I THINK THE ERROR IS HERE
   for (let index = 0; index < topicArr.length; index++) {
     title = topicArr[index];
     //creates buttons from items in the array
@@ -20,7 +21,6 @@ $(document).ready(function() {
   //on click function
 
   $("#buttons").on("click", function() {
-    var person = $(this).attr("data-type");
     //link to giphy and write query(limit 10)
     const queryURL =
       "http://api.giphy.com/v1/gifs/search?q=" +
@@ -32,16 +32,24 @@ $(document).ready(function() {
       .done(function(gifs) {
         console.log(gifs);
       })
+      //wait for response from ajax method
       .then(function(response) {
+        //variable for data of response
         const results = response.data;
+        //for loop to go through the gifs and matching ratings
         for (let ratings = 0; ratings < results.length; ratings++) {
           if (
+            //conditional to only show sfw gifs based on ratings
             results[ratings].rating !== "r" &&
             results[ratings].rating !== "pg-13"
           ) {
+            //variable for the rating of a specific gif
             let rating = results[ratings].rating;
+            //created a div
             let gifWrap = $("<div>");
+            //created a <p> to display the rating
             let p = $("<p>").text("Rating: " + rating);
+            //made a varialbe for the <img> being made per gif
             let movieGif = $(
               "<img src=" + results[ratings].images.fixed_height.url + ">"
             );
