@@ -1,32 +1,48 @@
 $(document).ready(function() {
   //array of movie names
-  const topicArr = [
-    "Spirted Away",
+  let topicArr = [
+    "Spirited Away",
     "Princess Mononoke",
     "Nausicaa",
     "the Cat Returns"
   ];
 
-  let title = "";
-  //for loop for movie titles I THINK THE ERROR IS HERE
-  for (let index = 0; index < topicArr.length; index++) {
-    title = topicArr[index];
-    //creates buttons from items in the array
-    $("#buttons").append(
-      "<button data-type=" + title + ">" + title + "</button>"
-    );
-
-    console.log($("button"));
+  //for loop for movie titles , scope issue
+  function makeButtons() {
+    $("#buttons").empty();
+    for (let index = 0; index < topicArr.length; index++) {
+      //creates buttons from items in the array
+      const title = $("<button>");
+      title.attr("data-name", topicArr[index]);
+      title.text(topicArr[index]);
+      $("#buttons").append(title);
+    }
   }
-  //on click function
 
-  $("#buttons").on("click", function() {
+  //user input buttons function
+
+  //on click function to add new buttons
+  $("#add-anime").on("click", function(event) {
+    event.preventDefault();
+    let movie = $("#anime-input")
+      .val()
+      .trim();
+    topicArr.push(movie);
+    makeButtons();
+  });
+  makeButtons();
+
+  //on click function for gif buttons
+  console.log(topicArr);
+  $("button").on("click", function() {
+    const topic = $(this).data("name");
     //link to giphy and write query(limit 10)
     const queryURL =
       "http://api.giphy.com/v1/gifs/search?q=" +
-      title +
+      //only uses last title in array
+      topic +
       "&api_key=4xTnjBJYg6aueD0kdEHtsoUcQ450SVGu&limit=10";
-    console.log(title);
+    console.log(topic);
     //ajax to get gifs from giphy
     $.ajax({ url: queryURL, method: "GET" })
       .done(function(gifs) {
@@ -51,15 +67,36 @@ $(document).ready(function() {
             let p = $("<p>").text("Rating: " + rating);
             //made a varialbe for the <img> being made per gif
             let movieGif = $(
-              "<img src=" + results[ratings].images.fixed_height.url + ">"
+              "<img src=" +
+                results[ratings].images.fixed_height_still.url +
+                "data-state='still'" +
+                "data-still=" +
+                "src=" +
+                results[ratings].images.fixed_height_still.url +
+                "data-animate=" +
+                "src=" +
+                results[ratings].images.fixed_height.url +
+                ">"
             );
             //adds p amd movieGif to the gifWrap div
-            gifWrap.append(p);
             gifWrap.append(movieGif);
+            gifWrap.append(p);
             //adds gifwrap to the page
-            $("#images").append(gifWrap);
+            $("#images").prepend(gifWrap);
           }
         }
       });
+  });
+
+  //currently, data state changes, but images do not
+  $("#images").on("click", function() {
+    const state = $(this).attr("data-state");
+    if (state === "still") {
+      $(this).attr("src", $(this).attr("data-animate"));
+      $(this).attr("data-state", "animate");
+    } else {
+      $(this).attr("src", $(this).attr("data-still"));
+      $(this).attr("data-state", "still");
+    }
   });
 });
