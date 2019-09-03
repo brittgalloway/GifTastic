@@ -82,8 +82,25 @@ button {
   font-size: 14pt;
   margin: 0px 5px;
 }
+#add-anime {
+  border-radius: 12px;
+  padding: 5px 12px;
+  background-color: white;
+  color: #4aaaa5;
+  font-size: 12pt;
+  margin: 5px;
+}
+#add-anime,
 button:hover {
   color: #ffce6e;
+}
+form {
+  padding: 5px;
+  margin: 10px 0px;
+}
+#anime-input {
+  padding: 5px;
+  margin: 10px 0px;
 }
 #images {
   display: grid;
@@ -95,7 +112,6 @@ button:hover {
 
 .rows {
   grid-column: 2;
-  grid-row: 4;
 }
 img {
   width: 273px;
