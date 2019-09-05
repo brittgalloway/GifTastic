@@ -53,6 +53,7 @@ $(document).ready(function() {
         const still = response.data[i2].images.fixed_height_still.url;
         //created <img>
         const image = $("<img>");
+        console.log(image);
         //adding attributes for still gifs
         image.attr("src", still);
         image.attr("data-still", still);
@@ -67,7 +68,7 @@ $(document).ready(function() {
         //put p in gifwrap
         gifWrap.append(p);
         //displaying image and rating
-        $("#images").append(gifWrap);
+        $("#images").prepend(gifWrap);
       }
     });
   });

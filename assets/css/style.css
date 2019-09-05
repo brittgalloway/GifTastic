@@ -82,7 +82,7 @@ button {
   font-size: 14pt;
   margin: 0px 5px;
 }
-#add-anime {
+#add-user {
   border-radius: 12px;
   padding: 5px 12px;
   background-color: white;
@@ -90,7 +90,7 @@ button {
   font-size: 12pt;
   margin: 5px;
 }
-#add-anime,
+
 button:hover {
   color: #ffce6e;
 }
@@ -98,7 +98,7 @@ form {
   padding: 5px;
   margin: 10px 0px;
 }
-#anime-input {
+#user-input {
   padding: 5px;
   margin: 10px 0px;
 }
@@ -110,10 +110,37 @@ form {
   padding-top: 20px;
 }
 
-.rows {
-  grid-column: 2;
-}
 img {
   width: 273px;
   padding: 20px 20px 20px 3px;
+}
+/* ---------RESPONSIVE---------- */
+@media screen and (max-width: 768px) {
+  nav {
+    align-content: center;
+  }
+  main {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  button {
+    border-radius: 12px;
+    padding: 10px 18px;
+    background-color: white;
+    color: #4aaaa5;
+    font-size: 12pt;
+    margin: 5px;
+  }
+  #images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    padding-top: 20px;
+  }
+  img {
+    width: 245px;
+    padding: 20px 20px 20px 3px;
+  }
 }
