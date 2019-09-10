@@ -34,7 +34,7 @@ $(document).ready(function() {
     const type = $(this).data("type");
     //query using type in for the search, limit 10 gifs
     const queryURL =
-      "http://api.giphy.com/v1/gifs/search?q=" +
+      "https://api.giphy.com/v1/gifs/search?q=" +
       type +
       "&api_key=4xTnjBJYg6aueD0kdEHtsoUcQ450SVGu&limit=10";
     //ajax request
