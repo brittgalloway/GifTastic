@@ -144,3 +144,54 @@ img {
     padding: 20px 20px 20px 3px;
   }
 }
+/* MEDIA QUERY TABLET */
+/* MEDIA QUERY MOBILE */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  header {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 150px;
+  }
+  nav {
+    font-size: 40px;
+    float: none;
+    text-align: center;
+    padding-top: 30px;
+  }
+  li {
+    display: inline;
+    padding: 0px 15px 0px 15px;
+    border-right: 1px solid #dddddd;
+  }
+  main {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  h1 {
+    text-align: center;
+    font-size: 80pt;
+    padding: 20px;
+  }
+  form {
+    padding: 10px;
+    margin: 10px 0px;
+  }
+  #user-input {
+    padding: 5px;
+    margin: 10px 0px;
+  }
+  #images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    padding-top: 20px;
+  }
+
+  img {
+    width: 273px;
+    padding: 20px 20px 20px 3px;
+  }
+}
