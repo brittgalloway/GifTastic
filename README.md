@@ -11,3 +11,6 @@ If you click on a gif it animates, if you click on it again it stops.
 If you want to see gifs from different movies then type in a title or phrase and click the "add" button. Now a new button is added to the screen. This button will now add 10 gifs related to the button name.
 
 If you click multiple buttons (or the same button multiple times) the new gifs get added to the top, or before the previous the gifs.
+
+## Deployed Project:
+https://brittgalloway.github.io/GifTastic/
